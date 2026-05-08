@@ -6,7 +6,7 @@ const global = StyleSheet.create({
         width:"100%",
         maxWidth:1200,
         padding:30,
-        backgroundColor:"#313131",
+        backgroundColor:"#C1C1C1",
         margin:"auto",
         marginTop:50,
         flex:1
