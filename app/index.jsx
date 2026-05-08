@@ -7,7 +7,7 @@ import Card from "../assets/componentes/Card";
 export default function Index() {
 
  // const URL_API ="http://192.168.40.15:5000";
- const URL_API ="https://backend-personajes-n9m9.onrender.com"
+ const URL_API="https://backend-personajes-n9m9.onrender.com"
 
 
   const [personajes, setPersonajes]= useState([]);
@@ -23,7 +23,7 @@ setFiltro({
 
   function getPersonajes(){
 
-    const response = axios.get(URL+"/api/v1/personajes/filtro",
+    const response = axios.get(URL_API+"/api/v1/personajes/filtro",
      { params: filtro
     }
     )
@@ -41,7 +41,7 @@ setFiltro({
   }
 
     function crearPersonaje(){
-    const response = axios.post(URL+"/api/v1/personajes",
+    const response = axios.post(URL_API+"/api/v1/personajes",
       {
              nombre:"Pedro",
         clase:"Mago",
@@ -64,7 +64,7 @@ console.log(error.response.data
   }
 
     function eliminarPersonaje(id){
-        const response = axios.delete(URL+"/api/v1/personajes/"+id)
+        const response = axios.delete(URL_API+"/api/v1/personajes/"+id)
         .then(function(){
              alert("Personaje eliminado Correctamente");
               setPersonajes(
