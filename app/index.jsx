@@ -6,7 +6,9 @@ import Card from "../assets/componentes/Card";
 
 export default function Index() {
 
-  const URL_API ="http://192.168.40.15:5000";
+ // const URL_API ="http://192.168.40.15:5000";
+ const URL_API =" https://backend-personajes-n9m9.onrender.com"
+
 
   const [personajes, setPersonajes]= useState([]);
   const [filtro, setFiltro]= useState({});
