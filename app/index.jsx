@@ -6,6 +6,8 @@ import Card from "../assets/componentes/Card";
 
 export default function Index() {
 
+  const URL_API ="http://192.168.40.15:5000";
+
   const [personajes, setPersonajes]= useState([]);
   const [filtro, setFiltro]= useState({});
   const [nuevoPersonaje, setNuevoPersonaje]= useState({});
@@ -19,7 +21,7 @@ setFiltro({
 
   function getPersonajes(){
 
-    const response = axios.get("http://192.168.40.15:5000/api/v1/personajes/filtro",
+    const response = axios.get(URL+"/api/v1/personajes/filtro",
      { params: filtro
     }
     )
@@ -37,7 +39,7 @@ setFiltro({
   }
 
     function crearPersonaje(){
-    const response = axios.post("http://192.168.40.15:5000/api/v1/personajes",
+    const response = axios.post(URL+"/api/v1/personajes",
       {
              nombre:"Pedro",
         clase:"Mago",
@@ -60,7 +62,7 @@ console.log(error.response.data
   }
 
     function eliminarPersonaje(id){
-        const response = axios.delete("http://192.168.40.15:5000/api/v1/personajes/"+id)
+        const response = axios.delete(URL+"/api/v1/personajes/"+id)
         .then(function(){
              alert("Personaje eliminado Correctamente");
               setPersonajes(
